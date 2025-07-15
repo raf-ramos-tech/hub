@@ -1,0 +1,23 @@
+name: Black Duck Security Scan
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+      - stage
+      - release
+  pull_request:
+    branches:
+      - main
+      - master
+      - develop
+      - stage
+      - release
+  workflow_dispatch: {}
+jobs:
+  blackducksca:
+    steps:
+      - name: Black Duck Security Scan
+        with:
+          include_diagnostics: true
